@@ -129,14 +129,14 @@ body, html {
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
   <h3 class="w3-center">Mes projets</h3>
-  <p class="w3-center"><em><br>Appuuer sur les imaes pour les agrandires</em></p><br>
+  <p class="w3-center"><em><br>Appuuer sur les images pour les agrandires</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
-      <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+      <img src="arduinologo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="arduino">  
     </div>
 
     <div class="w3-col m3">
@@ -225,7 +225,46 @@ function onClick(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
+  let captions = {
+ "arduino": `
+ <h1>ARDUINO</h1>
+ <p>qu'est ce que ce projet m'a apporté comment compétence et comment j'ai eu ce resultat ?</p> 
+    
+   
+  <h2>Présentation du logiciel arduino</h2>
+  <h4>Arduino est une plateforme open-source qui permet de créer des projets électroniques interactifs.
+   Elle se compose principalement de cartes microcontrôleur (comme l'Arduino Uno) et d'un logiciel appelé 
+   l'IDE Arduino. L'IDE permet d'écrire, compiler et télécharger des programmes sur la carte pour contrôler 
+   des capteurs, des moteurs et autres composants. Le langage de programmation est basé sur C/C++, avec des 
+   bibliothèques qui simplifient l'utilisation de nombreux modules. Arduino est populaire pour sa 
+   facilité d’utilisation, sa flexibilité et sa communauté active. C’est idéal pour des projets de domotique,
+    robots, et art interactif.</h4>Le C++ est utilisé dans des domaines où la performance et la gestion fine des ressources sont essentielles, tels que :
+    <hr>    
+    <hr>    
+      <img src="breadboard.jpg">
+   
+    <h2>Présentation du C++</h2>
+
+    <h4>Le C++ est utilisé dans des domaines où la performance
+       et la gestion fine des ressources sont essentielles, tels que :
+     <ul>
+      <li>Les jeux  vidéos
+      <li>Les applications système 
+      <li>Les applications embarquées
+      <li>Les applications de haute performance 
+        Avantages du C++ :
+      
+        
+<hr>
+<hr>
+
+   <img src="moi.jpg">
+
+
+    `
+   
+  }
+  captionText.innerHTML = captions[element.alt];
 }
 
 // Change style of navbar on scroll
